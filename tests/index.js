@@ -157,6 +157,16 @@ describe('IntlRelativeFormat', function () {
                 expect(rf.format(future(30 * 24 * 60 * 60 * 1000))).to.equal('in 30 days');
             });
 
+            it('should allow a unit of "week"', function () {
+                var rf = new IntlRelativeFormat('en', {units: 'week'});
+
+                expect(rf.format(now())).to.equal('this week');
+                expect(rf.format(past(7 * 24 * 60 * 60 * 1000))).to.equal('last week');
+                expect(rf.format(past(30 * 24 * 60 * 60 * 1000))).to.equal('4 weeks ago');
+                expect(rf.format(future(7 * 24 * 60 * 60 * 1000))).to.equal('next week');
+                expect(rf.format(future(30 * 24 * 60 * 60 * 1000))).to.equal('in 4 weeks');
+            });
+
             it('should handle short unit formats', function () {
                 var rf = new IntlRelativeFormat('en', {units: 'minute-short'});
 

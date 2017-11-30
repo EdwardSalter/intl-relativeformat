@@ -25,6 +25,7 @@ var FIELDS = [
     'minute', 'minute-short',
     'hour', 'hour-short',
     'day', 'day-short',
+    'week', 'week-short',
     'month', 'month-short',
     'year', 'year-short'
 ];
@@ -90,11 +91,12 @@ defineProperty(RelativeFormat, 'thresholds', {
     enumerable: true,
 
     value: {
-        second: 45, 'second-short': 45,  // seconds to minute
+        second: 45, 'second-short': 45, // seconds to minute
         minute: 45, 'minute-short': 45, // minutes to hour
-        hour  : 22, 'hour-short': 22, // hours to day
-        day   : 26, 'day-short': 26, // days to month
-        month : 11, 'month-short': 11 // months to year
+        hour  : 22, 'hour-short': 22,   // hours to day
+        day   : 6, 'day-short': 6,      // days to week
+        week  : 3, 'week-short': 3,     // weeks to month
+        month : 11, 'month-short': 11   // months to year
     }
 });
 
